@@ -61,8 +61,8 @@
 
     <!-- Filter & Sort Bar -->
     <div class="filter-bar">
-        <div class="filter-item">Filter</div>
-        <div class="filter-item">Sort By</div>
+        <div class="filter-item" id="filter-btn">Filter</div>
+        <div class="filter-item" id="sort-btn">Sort By</div>
         <div class="filter-item">
             <div class="view-toggles">
                 <div class="view-toggle" id="view-1"></div>
@@ -78,6 +78,41 @@
     </section>
     
     <footer><div class="footer-bottom" style="border-top: none; padding-top: 0;"><p>&copy; 2026 Sorah Salwar. All Rights Reserved.</p></div></footer>
+    
+    <!-- Sort Drawer -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="side-drawer" id="sort-drawer">
+        <div class="drawer-header">
+            <h2>Sort By</h2>
+            <div class="drawer-close" id="sort-close">&times;</div>
+        </div>
+        <div class="drawer-content">
+            <ul>
+                <li data-sort="featured" class="selected">Featured</li>
+                <li data-sort="price-low">Price: Low to High</li>
+                <li data-sort="price-high">Price: High to Low</li>
+                <li data-sort="newest">New Arrivals</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Filter Drawer (Baroque Style) -->
+    <div class="side-drawer" id="filter-drawer">
+        <div class="drawer-header">
+            <h2>Filters</h2>
+            <div class="drawer-close" id="filter-close">&times;</div>
+        </div>
+        <div class="drawer-content">
+            <ul>
+                <li>Availability <span>+</span></li>
+                <li>Price <span>+</span></li>
+                <li>Product Type <span>+</span></li>
+                <li>Fabric <span>+</span></li>
+                <li>Size <span>+</span></li>
+            </ul>
+        </div>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
