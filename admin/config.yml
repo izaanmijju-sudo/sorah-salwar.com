@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+  site_domain: sorahsalwar.netlify.app
+
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+collections:
+  - name: "product_settings"
+    label: "Product Settings"
+    files:
+      - file: "data/products.json"
+        name: "store_inventory"
+        label: "Store Inventory"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["featured", "pret", "formals", "unstitched", "bridal"]
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "WhatsApp Auto-Message", name: "whatsappMessage", widget: "string"}

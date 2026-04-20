@@ -1,0 +1,137 @@
+{
+  "items": [
+    {
+      "name": "Peach Gold Ensemble",
+      "price": "Rs 18,500",
+      "category": "featured",
+      "image": "/assets/images/product_peach.png",
+      "whatsappMessage": "I'm interested in the Peach Gold Ensemble"
+    },
+    {
+      "name": "Ruby Red Muse",
+      "price": "Rs 26,000",
+      "category": "featured",
+      "image": "/assets/images/product_ruby.png",
+      "whatsappMessage": "I'm interested in the Ruby Red Muse"
+    },
+    {
+      "name": "Sapphire Glow",
+      "price": "Rs 32,000",
+      "category": "featured",
+      "image": "/assets/images/product_sapphire.png",
+      "whatsappMessage": "I'm interested in the Sapphire Glow"
+    },
+    {
+      "name": "Mint Green Kurta",
+      "price": "Rs 12,000",
+      "category": "pret",
+      "image": "/assets/images/pret_1.png",
+      "whatsappMessage": "Hi! I'm interested in the Mint Green Kurta"
+    },
+    {
+      "name": "Maroon Straight Kameez",
+      "price": "Rs 14,500",
+      "category": "pret",
+      "image": "/assets/images/pret_2.png",
+      "whatsappMessage": "Hi! I'm interested in the Maroon Straight Kameez"
+    },
+    {
+      "name": "Azure White Block Print",
+      "price": "Rs 10,000",
+      "category": "pret",
+      "image": "/assets/images/pret_3.png",
+      "whatsappMessage": "Hi! I'm interested in the White Blue Block Print"
+    },
+    {
+      "name": "Powder Blue Lace Kurta",
+      "price": "Rs 11,500",
+      "category": "pret",
+      "image": "/assets/images/pret_4.png",
+      "whatsappMessage": "Hi! I'm interested in the Powder Blue Lace Kurta"
+    },
+    {
+      "name": "Onyx & Gold Gown",
+      "price": "Rs 45,000",
+      "category": "formals",
+      "image": "/assets/images/formals_1.png",
+      "whatsappMessage": "Hi! I'm interested in the Black and Gold Formal"
+    },
+    {
+      "name": "Lavender Sharara",
+      "price": "Rs 52,000",
+      "category": "formals",
+      "image": "/assets/images/formals_2.png",
+      "whatsappMessage": "Hi! I'm interested in the Lavender Sharara"
+    },
+    {
+      "name": "Midnight Blue Velvet",
+      "price": "Rs 65,000",
+      "category": "formals",
+      "image": "/assets/images/formals_3.png",
+      "whatsappMessage": "Hi! I'm interested in the Midnight Blue Velvet"
+    },
+    {
+      "name": "Mustard Gotapatti Anarkali",
+      "price": "Rs 48,000",
+      "category": "formals",
+      "image": "/assets/images/formals_4.png",
+      "whatsappMessage": "Hi! I'm interested in the Mustard Anarkali"
+    },
+    {
+      "name": "Pastel Pink Chiffon",
+      "price": "Rs 18,500",
+      "category": "unstitched",
+      "image": "/assets/images/unstitched_1.png",
+      "whatsappMessage": "Hi! I'm interested in the Pastel Pink Fabric"
+    },
+    {
+      "name": "Emerald Green Silk",
+      "price": "Rs 24,000",
+      "category": "unstitched",
+      "image": "/assets/images/unstitched_2.png",
+      "whatsappMessage": "Hi! I'm interested in the Emerald Green Silk"
+    },
+    {
+      "name": "Beige Embroidered Net",
+      "price": "Rs 16,000",
+      "category": "unstitched",
+      "image": "/assets/images/unstitched_3.png",
+      "whatsappMessage": "Hi! I'm interested in the Beige Embroidered Fabric"
+    },
+    {
+      "name": "Navy Floral Raw Silk",
+      "price": "Rs 21,500",
+      "category": "unstitched",
+      "image": "/assets/images/unstitched_4.png",
+      "whatsappMessage": "Hi! I'm interested in the Navy Blue Floral Fabric"
+    },
+    {
+      "name": "Royal Magenta Lehenga",
+      "price": "Rs 150,000",
+      "category": "bridal",
+      "image": "/assets/images/bridal_1.jpg",
+      "whatsappMessage": "Hi! I'm interested in the Bridal Magenta Lehenga"
+    },
+    {
+      "name": "Ivory Pearl Gown",
+      "price": "Rs 180,000",
+      "category": "bridal",
+      "image": "/assets/images/bridal_2.jpg",
+      "whatsappMessage": "Hi! I'm interested in the Bridal Ivory Gown"
+    },
+    {
+      "name": "Dusty Rose Sequence",
+      "price": "Rs 145,000",
+      "category": "bridal",
+      "image": "/assets/images/bridal_3.jpg",
+      "whatsappMessage": "Hi! I'm interested in the Bridal Beige Sequence Dress"
+    },
+    {
+      "name": "Classic Red Velvet",
+      "price": "Rs 165,000",
+      "category": "bridal",
+      "image": "/assets/images/bridal_4.jpg",
+      "whatsappMessage": "Hi! I'm interested in the Bridal Red Velvet Suit"
+    }
+  ]
+}

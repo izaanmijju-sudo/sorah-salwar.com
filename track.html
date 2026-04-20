@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order | Sorah Salwar</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .inner-hero { height: 40vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-light); color: var(--color-dark); text-align: center; padding-top: 80px; }
+        .inner-hero h1 { font-size: 2.6rem; letter-spacing: 2px; }
+        .inner-hero p { font-weight: 300; color: var(--color-text-muted); margin-top: 1rem; }
+        .text-section { padding: 6rem 5%; text-align: center; }
+        .text-container { max-width: 500px; margin: 0 auto; line-height: 1.8; color: var(--color-text-dark); }
+        .text-container p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .track-input { width: 100%; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--color-border); font-family: var(--font-sans); font-size: 1rem; outline: none; border-radius: 4px; }
+        .track-input:focus { border-color: var(--color-accent); }
+        .btn-full { display: block; width: 100%; border-radius: 4px; border: 1px solid var(--color-dark); background-color: var(--color-dark); color: #fff; text-transform: uppercase; letter-spacing: 2px; padding: 1rem; cursor: pointer; transition: 0.3s; }
+        .btn-full:hover { background-color: var(--color-accent); border-color: var(--color-accent); }
+    </style>
+</head>
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="menu-toggle"><span></span><span></span><span></span></div>
+        <div class="logo"><a href="index.html">Sorah Salwar</a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="bridal.html">Bridal</a></li>
+                <li><a href="formals.html">Formals</a></li>
+                <li><a href="pret.html">Pret / Ready to Wear</a></li>
+                <li><a href="unstitched.html">Unstitched</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="inner-hero">
+        <div>
+            <h1>Track Order</h1>
+            <p>Stay updated on the journey of your elegant pieces.</p>
+        </div>
+    </section>
+
+    <section class="text-section">
+        <div class="text-container">
+            <p>Enter your tracking details below to follow your order.</p>
+            <form onsubmit="event.preventDefault(); alert('Tracking system integration coming soon.');">
+                <input type="text" class="track-input" placeholder="Enter Tracking Number or Order ID" required>
+                <button type="submit" class="btn-full">Track Now</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer><div class="footer-bottom" style="padding: 2rem; background-color: var(--color-dark); color: #888; text-align: center;"><p>&copy; 2026 Sorah Salwar. All Rights Reserved.</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

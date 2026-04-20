@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --color-dark: #2b2118; /* Dark brown from logo text */
+  --color-light: #e6dbcf; /* Warm beige from logo background */
+  --color-accent: #8a7361; /* Mid-tone brown accent */
+  --color-text-dark: #2b2118; /* Dark brown for text */
+  --color-text-muted: #7e6b5d; /* Muted taupe */
+  --color-border: #dbcdba; /* Border matching darker shade of beige */
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark);
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, var(--color-light) 100%);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+header.scrolled {
+  background: rgba(230, 219, 207, 0.85); /* Glassmorphism matching new warm beige */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 5%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--color-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none; /* remove bullets */
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-dark);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.header-icons svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  stroke: var(--color-text-dark);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+}
+
+.header-icons svg:hover {
+  stroke: var(--color-accent);
+  transform: scale(1.15) rotate(-5deg); /* Playful tilt and grow */
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: var(--color-text-dark);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-dark); /* Rich espresso background for the hero section to look incredibly luxurious */
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 1;
+  transform: scale(1.05);
+  animation: breathe 25s infinite alternate linear;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+/* Gradient overlay to ensure text is readable */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 20px;
+  margin-top: 5rem;
+  animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Categories Section */
+.categories {
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  position: relative;
+  display: inline-block;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  animation: fadeUp 1.2s ease-out forwards;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  transition: opacity 0.4s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-card-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 10;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-card-text {
+  transform: translate(-50%, -15px); /* Slide text up slightly while image zooms */
+}
+
+.category-card-text h3 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* Shop Grid */
+.shop-section {
+  padding: 6rem 5%;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem 2rem;
+}
+
+.product-card {
+  text-align: center;
+  position: relative;
+  background-color: #ffffff;
+  padding: 1.2rem;
+  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  aspect-ratio: 2/3;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  image-rendering: -webkit-optimize-contrast; /* crisp edges */
+  image-rendering: high-quality;
+}
+
+.whatsapp-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-dark); /* Elegant dark matching the theme instead of jarring green */
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-image-wrapper:hover .whatsapp-btn {
+  transform: translateY(0);
+}
+
+.whatsapp-btn:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.product-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+
+.product-price {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* About Section */
+.about-section {
+  padding: 6rem 5%;
+  background-color: var(--color-light);
+  text-align: center;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 1.15rem;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 5rem 5% 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer-section ul {
+  list-style: none; /* remove bullets */
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: #aaaaaa;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--color-accent);
+  transform: translateX(8px); /* Satisfying slide-right effect for list items */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Newsletter Input */
+.newsletter-form {
+  display: flex;
+  margin-top: 1rem;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+}
+
+.newsletter-form input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  flex: 1;
+  outline: none;
+  font-family: var(--font-sans);
+}
+
+.newsletter-form button {
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
