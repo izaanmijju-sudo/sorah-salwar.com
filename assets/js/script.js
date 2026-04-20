@@ -93,26 +93,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const article = document.createElement('article');
             article.className = 'product-card';
             
-            const heartIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
-            const plusIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`;
             const encodedMsg = encodeURIComponent(product.whatsappMessage);
             
             article.innerHTML = `
-                <div class="product-image-wrapper">
-                    <div class="wishlist-btn">${heartIcon}</div>
-                    <img src="${product.image.replace(/^\//, '')}" alt="${product.name}" class="product-image">
-                    <a href="https://wa.me/971527467449?text=${encodedMsg}" target="_blank" class="quick-add-btn">
-                        ${plusIcon}
-                    </a>
-                </div>
-                <h3 class="product-title">${product.name}</h3>
-                <p class="product-price">${product.price}</p>
+                <a href="https://wa.me/971527467449?text=${encodedMsg}" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="product-image-wrapper">
+                        <img src="${product.image.replace(/^\//, '')}" alt="${product.name}" class="product-image">
+                    </div>
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-price">${product.price}</p>
+                </a>
             `;
             productContainer.appendChild(article);
         });
     }
 
     if (productContainer) {
+        // Force 2-column by default on mobile for 'Boutique' feel
+        pGrid.classList.remove('grid-1');
+        if (view2Btn) view2Btn.classList.add('active');
+        if (view1Btn) view1Btn.classList.remove('active');
+
         const category = productContainer.getAttribute('data-category');
         
         fetch('data/products.json')

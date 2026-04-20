@@ -272,21 +272,23 @@ header.scrolled {
   padding-bottom: 4px;
 }
 
-/* Page Headers (matching Baroque "Box Size") */
+/* Page Headers (Ultra-Luxury Boutique Style) */
 .inner-hero {
-  padding: 1.5rem 5%; /* Significantly reduced for a 'medium' height */
+  padding: 3rem 5%; 
   background-color: #fff;
   text-align: center;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f8f8f8;
+  margin-bottom: 2rem;
 }
 
 .inner-hero h1 {
-  font-size: 1.2rem; /* Scaled down for a more elegant look */
-  letter-spacing: 3px;
+  font-family: var(--font-serif); /* Premium Serif Font */
+  font-size: 1.5rem;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--color-dark);
-  font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
+  margin: 0;
 }
 
 .inner-hero p {
@@ -534,62 +536,27 @@ header.scrolled {
   gap: 1.5rem 1rem;
 }
 
+/* Premium Product Card Refinement */
 .product-card {
-  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease;
   position: relative;
-  background-color: transparent;
-  padding: 0;
-  transition: transform 0.4s ease;
-  animation: fadeUp 1s ease-out forwards;
+  text-align: center;
+  padding-bottom: 1.5rem;
 }
 
 .product-image-wrapper {
   position: relative;
   overflow: hidden;
   margin-bottom: 1rem;
-  aspect-ratio: 2/3;
-  background-color: #f8f8f8;
-  border-radius: 4px;
+  background-color: #f9f9f9;
+  aspect-ratio: 4/5;
 }
 
 .product-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Heart Icon (Wishlist) */
-.wishlist-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 32px;
-  height: 32px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 10;
-  cursor: pointer;
-}
-
-.wishlist-btn svg {
-  width: 16px;
-  height: 16px;
-  stroke: #444;
-}
-
-/* Quick Add (+) Button */
-.quick-add-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-  background: white;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
