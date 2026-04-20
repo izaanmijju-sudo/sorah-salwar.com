@@ -225,19 +225,19 @@ header.scrolled {
 
 /* Page Headers (matching Baroque "Box Size") */
 .inner-hero {
-  padding: 4rem 5%;
+  padding: 1.5rem 5%; /* Significantly reduced for a 'medium' height */
   background-color: #fff;
   text-align: center;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .inner-hero h1 {
-  font-size: 1.8rem;
-  letter-spacing: 4px;
+  font-size: 1.2rem; /* Scaled down for a more elegant look */
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-dark);
-  font-family: var(--font-sans); /* Use sans for the minimalist look */
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-weight: 500;
 }
 
 .inner-hero p {
