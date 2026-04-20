@@ -10,30 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Simple mobile menu toggle (for demonstration)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    // Mobile Menu Overlay Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const overlayCloseBtn = document.getElementById('overlay-close-btn');
     
-    if(menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            // Very rudimentary mobile toggle just for visual feedback.
-            // A more complex app would use a proper slide-out drawer here.
-            const isDisplayed = navLinks.style.display === 'flex';
-            if (isDisplayed) {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(250, 249, 246, 0.95)';
-                navLinks.style.backdropFilter = 'blur(10px)';
-                navLinks.style.padding = '2rem';
-                navLinks.style.textAlign = 'center';
-                navLinks.style.borderBottom = '1px solid rgba(0,0,0,0.05)';
-            }
+    if (mobileMenuBtn && mobileOverlay) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        });
+        
+        overlayCloseBtn.addEventListener('click', () => {
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close on link click
+        const overlayLinks = mobileOverlay.querySelectorAll('a');
+        overlayLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 
@@ -70,14 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     const article = document.createElement('article');
                     article.className = 'product-card';
                     
-                    const waIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>`;
+                    const heartIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+                    const plusIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`;
                     const encodedMsg = encodeURIComponent(product.whatsappMessage);
                     
                     article.innerHTML = `
                         <div class="product-image-wrapper">
+                            <div class="wishlist-btn">${heartIcon}</div>
                             <img src="${product.image.replace(/^\//, '')}" alt="${product.name}" class="product-image">
-                            <a href="https://wa.me/971527467449?text=${encodedMsg}" target="_blank" class="whatsapp-btn">
-                                ${waIcon} Inquire
+                            <a href="https://wa.me/971527467449?text=${encodedMsg}" target="_blank" class="quick-add-btn">
+                                ${plusIcon}
                             </a>
                         </div>
                         <h3 class="product-title">${product.name}</h3>
