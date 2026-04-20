@@ -200,12 +200,12 @@ header.scrolled {
   padding: 1.5rem 5%;
   background: #fff;
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .category-slider::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
 }
 
 .category-slider a {
@@ -221,6 +221,79 @@ header.scrolled {
   color: var(--color-dark);
   border-bottom: 1.5px solid var(--color-dark);
   padding-bottom: 4px;
+}
+
+/* Page Headers (matching Baroque "Box Size") */
+.inner-hero {
+  padding: 4rem 5%;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.inner-hero h1 {
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  font-family: var(--font-sans); /* Use sans for the minimalist look */
+  font-weight: 400;
+}
+
+.inner-hero p {
+  display: none; /* Hide subtitle for ultra-minimalist look like Baroque */
+}
+
+/* Filter & View Bar */
+.filter-bar {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+}
+
+.filter-item {
+  flex: 1;
+  padding: 1.2rem;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.filter-item:last-child {
+  border-right: none;
+}
+
+/* Grid View Toggles */
+.view-toggles {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-toggle {
+  width: 18px;
+  height: 18px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.view-toggle.active {
+  background-color: #000;
+}
+
+/* Grid Override Classes */
+.product-grid.grid-1 {
+  grid-template-columns: 1fr !important;
+  gap: 2rem;
+}
+
+.product-grid.grid-1 .product-image-wrapper {
+  aspect-ratio: 4/5; /* Make images even bigger in 1-column view */
 }
 
 /* Hero Section */

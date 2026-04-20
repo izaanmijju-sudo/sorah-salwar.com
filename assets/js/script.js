@@ -36,6 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Grid View Toggle (1-column vs 2-column)
+    const view1Btn = document.getElementById('view-1');
+    const view2Btn = document.getElementById('view-2');
+    const pGrid = document.querySelector('.product-grid');
+
+    if (view1Btn && view2Btn && pGrid) {
+        view1Btn.addEventListener('click', () => {
+            pGrid.classList.add('grid-1');
+            view1Btn.classList.add('active');
+            view2Btn.classList.remove('active');
+        });
+
+        view2Btn.addEventListener('click', () => {
+            pGrid.classList.remove('grid-1');
+            view2Btn.classList.add('active');
+            view1Btn.classList.remove('active');
+        });
+    }
+
     // "Quick Add" visual feedback
     const quickAddBtns = document.querySelectorAll('.quick-add');
     quickAddBtns.forEach(btn => {
